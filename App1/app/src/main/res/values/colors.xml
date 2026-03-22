@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs principales -->
+    <color name="teal_50">#E0F2F1</color>
+    <color name="purple_200">#FFB2A6FF</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_50">#F3E5F5</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="purple_100">#F3E5F5</color>
+    
+    <!-- Couleurs secondaires -->
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    
+    <!-- Couleurs de base -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Arrière-plans -->
+    <color name="light_background">#FFF5F5F5</color>
+    <color name="card_background">#FFFFFFFF</color>
+    
+    <!-- Textes -->
+    <color name="text_primary">#FF212121</color>
+    <color name="text_secondary">#FF757575</color>
+    
+    <!-- États et statuts -->
+    <color name="success">#FF4CAF50</color>
+    <color name="warning">#FFFF9800</color>
+    <color name="danger">#FFF44336</color>
+    <color name="info">#FF2196F3</color>
+    
+    <!-- Dégradés (UN SEUL BLOC - PAS DE DOUBLONS) -->
+    <color name="gradient_start">#FF6B6B</color>
+    <color name="gradient_start_v2">#517692</color>
+    <color name="gradient_center">#4ECDC4</color>
+    <color name="gradient_end">#45B7D1</color>
+    <color name="gradient_end_v2">#3568b6</color>
+</resources>

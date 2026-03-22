@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- État pressé -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#F0F0F0" />  <!-- Gris clair quand pressé -->
+            <corners android:radius="22dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/purple_700" />  <!-- Bordure violet foncé -->
+        </shape>
+    </item>
+    
+    <!-- État focused (quand on navigue avec clavier/télécommande) -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FAFAFA" />
+            <corners android:radius="22dp" />
+            <stroke
+                android:width="3dp"
+                android:color="@color/purple_500" />
+        </shape>
+    </item>
+    
+    <!-- État normal -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:radius="22dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/purple_200" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- En-tête avec icône -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_add"
+                android:tint="@color/purple_500"
+                android:background="@drawable/circle_background_light"
+                android:padding="12dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informations de l'appartement"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:fontFamily="sans-serif-medium"/>
+        </LinearLayout>
+
+        <!-- Champ Numéro d'appartement -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@android:color/black"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@android:color/black"
+            app:placeholderText="Ex: 101, 102, 201..."
+            app:placeholderTextColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_home"
+            app:startIconTint="@color/purple_500">
+
+            <EditText
+                android:id="@+id/etNumApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numéro d'appartement"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ Désignation -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@android:color/black"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@android:color/black"
+            app:placeholderText="Ex: Studio, T2, T3, Duplex..."
+            app:placeholderTextColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_list"
+            app:startIconTint="@color/purple_500">
+
+            <EditText
+                android:id="@+id/etDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Désignation"
+                android:maxLength="50"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ Loyer -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@android:color/black"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@android:color/black"
+            app:placeholderText="Ex: 800.00, 1200.50, 2500.00..."
+            app:placeholderTextColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_money"
+            app:startIconTint="@color/purple_500"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:id="@+id/etLoyer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Loyer mensuel (DT)"
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Boutons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Enregistrer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/purple_500"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Annuler"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/darker_gray"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
