@@ -30,10 +30,30 @@
     <color name="danger">#FFF44336</color>
     <color name="info">#FF2196F3</color>
     
-    <!-- Dégradés (UN SEUL BLOC - PAS DE DOUBLONS) -->
+    <!-- Dégradés -->
     <color name="gradient_start">#FF6B6B</color>
     <color name="gradient_start_v2">#517692</color>
     <color name="gradient_center">#4ECDC4</color>
     <color name="gradient_end">#45B7D1</color>
     <color name="gradient_end_v2">#3568b6</color>
+    
+    <!-- Couleurs pour les cartes de statistiques -->
+    <color name="card_total_bg">#F3E5F5</color>
+    <color name="card_total_text">#6200EE</color>
+    <color name="card_bas_bg">#E8F5E9</color>
+    <color name="card_bas_text">#4CAF50</color>
+    <color name="card_moyen_bg">#FFF3E0</color>
+    <color name="card_moyen_text">#FF9800</color>
+    <color name="card_eleve_bg">#FFEBEE</color>
+    <color name="card_eleve_text">#F44336</color>
+    
+    <!-- Couleurs pour les badges d'observation -->
+    <color name="badge_bas">#4CAF50</color>
+    <color name="badge_moyen">#FF9800</color>
+    <color name="badge_eleve">#F44336</color>
+    
+    <!-- Couleurs pour les histogrammes -->
+    <color name="histo_bas">#4CAF50</color>
+    <color name="histo_moyen">#FF9800</color>
+    <color name="histo_eleve">#F44336</color>
 </resources>
