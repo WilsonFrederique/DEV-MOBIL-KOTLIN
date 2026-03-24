@@ -38,14 +38,26 @@
                 android:padding="12dp"/>
         </LinearLayout>
 
+        <!-- ProgressBar de chargement -->
+        <ProgressBar
+            android:id="@+id/progressBarStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="32dp"
+            android:visibility="visible"
+            style="?android:attr/progressBarStyleLarge"/>
+
         <!-- Cartes de statistiques modernes -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardStatsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
             android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,7 +111,7 @@
                                 android:id="@+id/tvStatsTotal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0.00 DT"
+                                android:text="0 €"
                                 android:textColor="@color/purple_500"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -135,7 +147,7 @@
                                 android:id="@+id/tvStatsMoyenne"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0.00 DT"
+                                android:text="0 €"
                                 android:textColor="@color/teal_700"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -171,7 +183,7 @@
                                 android:id="@+id/tvStatsMin"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0.00 DT"
+                                android:text="0 €"
                                 android:textColor="@color/warning"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -207,7 +219,7 @@
                                 android:id="@+id/tvStatsMax"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0.00 DT"
+                                android:text="0 €"
                                 android:textColor="@color/danger"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -250,12 +262,14 @@
 
         <!-- Section Histogramme -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardHistogramContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
             android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -283,7 +297,7 @@
                         android:id="@+id/tvMaxValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Max: 0 DT"
+                        android:text="Max: 0 €"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary"
                         android:background="@drawable/badge_light"
@@ -303,13 +317,15 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Légende moderne -->
+        <!-- Légende -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardLegendContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"

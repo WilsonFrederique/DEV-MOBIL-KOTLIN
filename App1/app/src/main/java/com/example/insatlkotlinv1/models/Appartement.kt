@@ -5,7 +5,7 @@ import java.io.Serializable
 data class Appartement(
     val numApp: Int,
     val design: String,
-    val loyer: Double
+    val loyer: Double 
 ) : Serializable {
     val obs: String
         get() = when {

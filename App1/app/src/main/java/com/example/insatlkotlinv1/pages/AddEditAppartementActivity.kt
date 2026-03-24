@@ -1,6 +1,6 @@
 package com.example.insatlkotlinv1.pages
 
-import android.content.Intent  // IMPORT MANQUANT AJOUTÉ
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -29,10 +29,10 @@ class AddEditAppartementActivity : AppCompatActivity() {
         // Vérifier si on est en mode édition
         if (intent.hasExtra("appartement")) {
             appartementToEdit = intent.getSerializableExtra("appartement") as Appartement
-            title = "Modifier Appartement"
+            supportActionBar?.title = "Modifier Appartement"
             populateFields()
         } else {
-            title = "Ajouter Appartement"
+            supportActionBar?.title = "Ajouter Appartement"
         }
 
         setupListeners()
@@ -44,6 +44,8 @@ class AddEditAppartementActivity : AppCompatActivity() {
         etLoyer = findViewById(R.id.etLoyer)
         btnSave = findViewById(R.id.btnSave)
         btnCancel = findViewById(R.id.btnCancel)
+        
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun populateFields() {
@@ -64,41 +66,64 @@ class AddEditAppartementActivity : AppCompatActivity() {
 
                 val appartement = Appartement(numApp, design, loyer)
 
-                val resultIntent = Intent()  // Maintenant Intent est reconnu
+                val resultIntent = Intent()
                 resultIntent.putExtra("appartement", appartement as Serializable)
-                if (appartementToEdit != null) {
-                    resultIntent.putExtra("isEdit", true)
-                }
                 setResult(RESULT_OK, resultIntent)
                 finish()
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
         }
 
         btnCancel.setOnClickListener {
             setResult(RESULT_CANCELED)
             finish()
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 
     private fun validateFields(): Boolean {
         if (etNumApp.text.toString().isEmpty()) {
             etNumApp.error = "Numéro requis"
+            etNumApp.requestFocus()
             return false
         }
+        
         if (etDesign.text.toString().isEmpty()) {
             etDesign.error = "Désignation requise"
+            etDesign.requestFocus()
             return false
         }
+        
         if (etLoyer.text.toString().isEmpty()) {
             etLoyer.error = "Loyer requis"
+            etLoyer.requestFocus()
             return false
         }
+        
         try {
-            etLoyer.text.toString().toDouble()
+            val loyer = etLoyer.text.toString().toDouble()
+            if (loyer < 0) {
+                etLoyer.error = "Le loyer doit être positif"
+                etLoyer.requestFocus()
+                return false
+            }
         } catch (e: NumberFormatException) {
             etLoyer.error = "Loyer invalide"
+            etLoyer.requestFocus()
             return false
         }
+        
         return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+    override fun onBackPressed() {
+        setResult(RESULT_CANCELED)
+        super.onBackPressed()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }
