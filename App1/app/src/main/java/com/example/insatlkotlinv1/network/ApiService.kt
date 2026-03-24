@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit
 
 class ApiService {
     // Utilisez la nouvelle URL localtunnel
-    private val BASE_URL = "http://192.168.2.134:4040/api"
+    // private val BASE_URL = "http://192.168.2.134:4040/api"
+    private val BASE_URL = "https://back-dev-mobil-kotlin.onrender.com/api"
     
     private val client = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
