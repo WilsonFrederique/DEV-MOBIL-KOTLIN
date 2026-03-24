@@ -23,9 +23,13 @@ class AppartementAdapter(
 
         val appartement = appartements[position]
 
+        // Design
         view.findViewById<TextView>(R.id.tvDesign).text = appartement.design
-        view.findViewById<TextView>(R.id.tvLoyer).text = String.format("%.2f DT", appartement.loyer)
         
+        // Loyer
+        view.findViewById<TextView>(R.id.tvLoyer).text = String.format("%.0f €", appartement.loyer)
+        
+        // Observation
         val tvObs = view.findViewById<TextView>(R.id.tvObs)
         tvObs.text = appartement.obs
         // Changer la couleur selon l'observation
@@ -35,6 +39,7 @@ class AppartementAdapter(
             "Élevé" -> tvObs.setBackgroundColor(context.getColor(android.R.color.holo_red_light))
         }
 
+        // Boutons d'action
         view.findViewById<ImageButton>(R.id.btnEdit).setOnClickListener {
             onEditClick(appartement)
         }
